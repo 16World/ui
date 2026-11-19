@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "description": "Reusable React component library",
   "license": "MIT",
-    "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/16World/ui.git"
   },
