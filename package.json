@@ -3,6 +3,10 @@
   "version": "0.1.1",
   "description": "Reusable React component library",
   "license": "MIT",
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/16World/ui.git"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
