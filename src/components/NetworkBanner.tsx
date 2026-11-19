@@ -9,7 +9,7 @@ export function NetworkBanner() {
         <nav className="container breakout" aria-label="breadcrumb">
           <ul>
             <li>
-              <a className="secondary" href="https://16w.eu/natrium">
+              <a className="contrast" href="https://16w.eu/natrium">
                 <i className="fa-solid fa-circle-nodes"></i> Red Natrium
               </a>
             </li>
@@ -17,7 +17,7 @@ export function NetworkBanner() {
           {status == "authenticated" ?
             <ul>
                 <li>
-                <a className="secondary" href="/cuenta">
+                <a className="contrast" href="/cuenta">
                     {session?.user?.name}
                     <i className="fa-solid fa-user"></i>
                 </a>
@@ -26,7 +26,7 @@ export function NetworkBanner() {
             :
             <ul>
                 <li>
-                <a className="secondary" onClick={() => signIn("authentik")}>
+                <a className="contrast" onClick={() => signIn("authentik")}>
                     Iniciar sesión
                     <i className="fa-solid fa-user"></i>
                 </a>
