@@ -5,7 +5,7 @@ import { signIn, useSession } from "next-auth/react";
 export function NetworkBanner() {
   const { data: session, status } = useSession();
   return (
-      <header className="darkeraccent">
+      <header className="darkeraccent" data-theme="dark">
         <nav className="container breakout" aria-label="breadcrumb">
           <ul>
             <li>

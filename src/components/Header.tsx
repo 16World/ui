@@ -7,7 +7,7 @@ interface HeaderProps {
 
 export function Header({ title, children }: HeaderProps) {
   return (
-    <header className="accent">
+    <header className="accent" data-theme="dark">
       <header className="container">
         <nav>
           <big>
