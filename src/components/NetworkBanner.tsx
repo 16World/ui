@@ -18,7 +18,7 @@ export function NetworkBanner({
       <nav className="container breakout" aria-label="Red Natrium">
         <ul>
           <li>
-            <Link className="contrast" href="https://16w.eu/natrium">
+            <Link className="contrast" href="https://supermiso.com/natrium">
               <i className="fa-solid fa-circle-nodes"></i> Red Natrium
             </Link>
           </li>
