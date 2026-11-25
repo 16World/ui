@@ -1,39 +1,43 @@
-"use client";
-import { signIn, useSession } from "next-auth/react";
+import Link from "next/link";
 
+interface NetworkBannerProps {
+  user?: {
+    name?: string | null;
+  } | null;
+  loginUrl?: string;
+  accountUrl?: string;
+}
 
-export function NetworkBanner() {
-  const { data: session, status } = useSession();
+export function NetworkBanner({
+  user = null,
+  loginUrl = "/api/auth/signin",
+  accountUrl = "/cuenta",
+}: NetworkBannerProps) {
   return (
-      <header className="darkeraccent" data-theme="dark">
-        <nav className="container breakout" aria-label="breadcrumb">
-          <ul>
-            <li>
-              <a className="contrast" href="https://16w.eu/natrium">
-                <i className="fa-solid fa-circle-nodes"></i> Red Natrium
-              </a>
-            </li>
-          </ul>
-          {status == "authenticated" ?
-            <ul>
-                <li>
-                <a className="contrast" href="/cuenta">
-                    {session?.user?.name}
-                    <i className="fa-solid fa-user"></i>
-                </a>
-                </li>
-            </ul>
-            :
-            <ul>
-                <li>
-                <a className="contrast" onClick={() => signIn("authentik")}>
-                    Iniciar sesión
-                    <i className="fa-solid fa-user"></i>
-                </a>
-                </li>
-            </ul>
-          }
-        </nav>
-      </header>
+    <header className="darkeraccent" data-theme="dark">
+      <nav className="container breakout" aria-label="Red Natrium">
+        <ul>
+          <li>
+            <Link className="contrast" href="https://16w.eu/natrium">
+              <i className="fa-solid fa-circle-nodes"></i> Red Natrium
+            </Link>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <Link
+              className="contrast"
+              href={user ? accountUrl : loginUrl}
+              prefetch={false}
+            >
+              {user ? user.name || "Mi cuenta" : "Iniciar sesión"}
+              {" "}
+              <i className="fa-solid fa-user"></i>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
